@@ -10,5 +10,8 @@ anyhow = "1.0.57"
 bincode = "1.3.3"
 byteorder = "1.4.3"
 bytes = "1.1.0"
-snarkvm = "0.8.0"
 tokio-util = {version = "0.7.1", features = ["codec"]}
+
+[dependencies.snarkvm]
+git = "https://github.com/HarukaMa/snarkVM.git"
+rev = "cfb283e3"
