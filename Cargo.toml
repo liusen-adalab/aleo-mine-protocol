@@ -13,5 +13,5 @@ bytes = "1.1.0"
 tokio-util = {version = "0.7.1", features = ["codec"]}
 
 [dependencies.snarkvm]
-git = "https://github.com/HarukaMa/snarkVM.git"
-rev = "cfb283e3"
+git = "https://github.com/liusen-adalab/snarkVM.git"
+rev = "e872e7c8819f9cfc81317f5c7e76728726507ab4"
