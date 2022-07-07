@@ -4,8 +4,7 @@ use anyhow::anyhow;
 use byteorder::{LittleEndian, ReadBytesExt};
 use bytes::{Buf, BufMut, BytesMut};
 use snarkvm::{
-    dpc::{testnet2::Testnet2, Address, BlockTemplate, PoSWProof},
-    traits::Network,
+    dpc::{testnet2::Testnet2, Address, BlockTemplate, Network, PoSWProof},
     utilities::{FromBytes, ToBytes},
 };
 use tokio_util::codec::{Decoder, Encoder};
