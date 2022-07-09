@@ -228,25 +228,6 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "baf1de4339761588bc0619e3cbc0120ee582ebb74b53b4efbf79117bd2da40fd"
 
 [[package]]
-name = "cl-sys"
-version = "0.4.2"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "e8573fa3ff8acd6c49e8e113296c54277e82376b96c6ca6307848632cce38e44"
-dependencies = [
- "libc",
-]
-
-[[package]]
-name = "cl3"
-version = "0.6.5"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "f9f2217b5993b54a819ac8e8569cc429702c8975a88d52c73e530f1f813576a3"
-dependencies = [
- "cl-sys",
- "libc",
-]
-
-[[package]]
 name = "clap"
 version = "3.2.8"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -396,24 +377,6 @@ dependencies = [
 ]
 
 [[package]]
-name = "cuda-config"
-version = "0.1.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "4ee74643f7430213a1a78320f88649de309b20b80818325575e393f848f79f5d"
-dependencies = [
- "glob",
-]
-
-[[package]]
-name = "cuda-driver-sys"
-version = "0.3.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "1d4c552cc0de854877d80bcd1f11db75d42be32962d72a6799b88dcca88fffbd"
-dependencies = [
- "cuda-config",
-]
-
-[[package]]
 name = "curl"
 version = "0.4.43"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -532,18 +495,6 @@ dependencies = [
 ]
 
 [[package]]
-name = "fil-rustacuda"
-version = "0.1.3"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "6313e2871ba9705f4151bb60d96b6f43e7444ed82918ba5fb99fbd448e82c34d"
-dependencies = [
- "bitflags",
- "cuda-driver-sys",
- "rustacuda_core",
- "rustacuda_derive",
-]
-
-[[package]]
 name = "fnv"
 version = "1.0.7"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -653,12 +604,6 @@ dependencies = [
 ]
 
 [[package]]
-name = "glob"
-version = "0.3.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "9b919933a397b79c37e33b77bb2aa3dc8eb6e165ad809e58ff75bc7db2e34574"
-
-[[package]]
 name = "h2"
 version = "0.3.13"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -679,9 +624,9 @@ dependencies = [
 
 [[package]]
 name = "hashbrown"
-version = "0.12.1"
+version = "0.12.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "db0d4cf898abf0081f964436dc980e96670a0f36863e4b83aaacdb65c9d7ccc3"
+checksum = "607c8a29735385251a339424dd462993c0fed8fa09d378f259377df08c126022"
 dependencies = [
  "ahash",
 ]
@@ -743,9 +688,9 @@ checksum = "c4a1e36c821dbe04574f602848a19f742f4fb3c98d40449f11bcad18d6b17421"
 
 [[package]]
 name = "hyper"
-version = "0.14.19"
+version = "0.14.20"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "42dc3c131584288d375f2d07f822b0cb012d8c6fb899a5b9fdb3cb7eb9b6004f"
+checksum = "02c929dc5c39e335a03c405292728118860721b10190d98c2a0f0efd5baafbac"
 dependencies = [
  "bytes",
  "futures-channel",
@@ -1037,16 +982,6 @@ name = "once_cell"
 version = "1.13.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "18a6dbe30758c9f83eb00cbea4ac95966305f5a7772f3f42ebfc7fc7eddbd8e1"
-
-[[package]]
-name = "opencl3"
-version = "0.6.3"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "931cc2ab3068142384dbdaba142681c11b315cf3b96c7a59e8480d062363387f"
-dependencies = [
- "cl3",
- "libc",
-]
 
 [[package]]
 name = "openssl"
@@ -1390,41 +1325,6 @@ dependencies = [
 ]
 
 [[package]]
-name = "rust-gpu-tools"
-version = "0.6.1"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "3b2838e99bd4c9b3e6a963194440c6c5b66721d3f127625d709236ecaa1a730f"
-dependencies = [
- "dirs",
- "fil-rustacuda",
- "hex",
- "lazy_static",
- "log",
- "once_cell",
- "opencl3",
- "sha2",
- "temp-env",
- "thiserror",
-]
-
-[[package]]
-name = "rustacuda_core"
-version = "0.1.2"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "d3858b08976dc2f860c5efbbb48cdcb0d4fafca92a6ac0898465af16c0dbe848"
-
-[[package]]
-name = "rustacuda_derive"
-version = "0.1.2"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "43ce8670a1a1d0fc2514a3b846dacdb65646f9bd494b6674cfacbb4ce430bd7e"
-dependencies = [
- "proc-macro2 1.0.40",
- "quote 1.0.20",
- "syn 1.0.98",
-]
-
-[[package]]
 name = "rustc_version"
 version = "0.4.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -1579,7 +1479,7 @@ checksum = "2fd0db749597d91ff862fd1d55ea87f7855a744a8425a64695b6fca237d1dad1"
 [[package]]
 name = "snarkvm"
 version = "0.7.5"
-source = "git+https://github.com/liusen-adalab/snarkVM.git?branch=sen-testnet3#759edcca7331ceb0385664a158381b5d6bdbce1c"
+source = "git+https://github.com/liusen-adalab/snarkVM.git?branch=sen-testnet3#406ea42715cb1d922822ef428df97b69dcf0f5f6"
 dependencies = [
  "anyhow",
  "clap",
@@ -1605,7 +1505,7 @@ dependencies = [
 [[package]]
 name = "snarkvm-algorithms"
 version = "0.7.5"
-source = "git+https://github.com/liusen-adalab/snarkVM.git?branch=sen-testnet3#759edcca7331ceb0385664a158381b5d6bdbce1c"
+source = "git+https://github.com/liusen-adalab/snarkVM.git?branch=sen-testnet3#406ea42715cb1d922822ef428df97b69dcf0f5f6"
 dependencies = [
  "aleo-std",
  "anyhow",
@@ -1626,7 +1526,6 @@ dependencies = [
  "rand_chacha",
  "rand_core",
  "rayon",
- "rust-gpu-tools",
  "serde",
  "sha2",
  "smallvec",
@@ -1641,7 +1540,7 @@ dependencies = [
 [[package]]
 name = "snarkvm-circuit"
 version = "0.7.5"
-source = "git+https://github.com/liusen-adalab/snarkVM.git?branch=sen-testnet3#759edcca7331ceb0385664a158381b5d6bdbce1c"
+source = "git+https://github.com/liusen-adalab/snarkVM.git?branch=sen-testnet3#406ea42715cb1d922822ef428df97b69dcf0f5f6"
 dependencies = [
  "snarkvm-circuit-account",
  "snarkvm-circuit-algorithms",
@@ -1656,7 +1555,7 @@ dependencies = [
 [[package]]
 name = "snarkvm-circuit-account"
 version = "0.7.5"
-source = "git+https://github.com/liusen-adalab/snarkVM.git?branch=sen-testnet3#759edcca7331ceb0385664a158381b5d6bdbce1c"
+source = "git+https://github.com/liusen-adalab/snarkVM.git?branch=sen-testnet3#406ea42715cb1d922822ef428df97b69dcf0f5f6"
 dependencies = [
  "snarkvm-circuit-algorithms",
  "snarkvm-circuit-network",
@@ -1667,7 +1566,7 @@ dependencies = [
 [[package]]
 name = "snarkvm-circuit-algorithms"
 version = "0.7.5"
-source = "git+https://github.com/liusen-adalab/snarkVM.git?branch=sen-testnet3#759edcca7331ceb0385664a158381b5d6bdbce1c"
+source = "git+https://github.com/liusen-adalab/snarkVM.git?branch=sen-testnet3#406ea42715cb1d922822ef428df97b69dcf0f5f6"
 dependencies = [
  "snarkvm-circuit-types",
  "snarkvm-console-algorithms",
@@ -1677,7 +1576,7 @@ dependencies = [
 [[package]]
 name = "snarkvm-circuit-collections"
 version = "0.7.5"
-source = "git+https://github.com/liusen-adalab/snarkVM.git?branch=sen-testnet3#759edcca7331ceb0385664a158381b5d6bdbce1c"
+source = "git+https://github.com/liusen-adalab/snarkVM.git?branch=sen-testnet3#406ea42715cb1d922822ef428df97b69dcf0f5f6"
 dependencies = [
  "snarkvm-circuit-algorithms",
  "snarkvm-circuit-types",
@@ -1687,7 +1586,7 @@ dependencies = [
 [[package]]
 name = "snarkvm-circuit-environment"
 version = "0.7.5"
-source = "git+https://github.com/liusen-adalab/snarkVM.git?branch=sen-testnet3#759edcca7331ceb0385664a158381b5d6bdbce1c"
+source = "git+https://github.com/liusen-adalab/snarkVM.git?branch=sen-testnet3#406ea42715cb1d922822ef428df97b69dcf0f5f6"
 dependencies = [
  "indexmap",
  "itertools",
@@ -1705,12 +1604,12 @@ dependencies = [
 [[package]]
 name = "snarkvm-circuit-environment-witness"
 version = "0.7.5"
-source = "git+https://github.com/liusen-adalab/snarkVM.git?branch=sen-testnet3#759edcca7331ceb0385664a158381b5d6bdbce1c"
+source = "git+https://github.com/liusen-adalab/snarkVM.git?branch=sen-testnet3#406ea42715cb1d922822ef428df97b69dcf0f5f6"
 
 [[package]]
 name = "snarkvm-circuit-network"
 version = "0.7.5"
-source = "git+https://github.com/liusen-adalab/snarkVM.git?branch=sen-testnet3#759edcca7331ceb0385664a158381b5d6bdbce1c"
+source = "git+https://github.com/liusen-adalab/snarkVM.git?branch=sen-testnet3#406ea42715cb1d922822ef428df97b69dcf0f5f6"
 dependencies = [
  "snarkvm-circuit-algorithms",
  "snarkvm-circuit-collections",
@@ -1722,7 +1621,7 @@ dependencies = [
 [[package]]
 name = "snarkvm-circuit-program"
 version = "0.7.5"
-source = "git+https://github.com/liusen-adalab/snarkVM.git?branch=sen-testnet3#759edcca7331ceb0385664a158381b5d6bdbce1c"
+source = "git+https://github.com/liusen-adalab/snarkVM.git?branch=sen-testnet3#406ea42715cb1d922822ef428df97b69dcf0f5f6"
 dependencies = [
  "snarkvm-circuit-account",
  "snarkvm-circuit-network",
@@ -1734,7 +1633,7 @@ dependencies = [
 [[package]]
 name = "snarkvm-circuit-transition"
 version = "0.7.5"
-source = "git+https://github.com/liusen-adalab/snarkVM.git?branch=sen-testnet3#759edcca7331ceb0385664a158381b5d6bdbce1c"
+source = "git+https://github.com/liusen-adalab/snarkVM.git?branch=sen-testnet3#406ea42715cb1d922822ef428df97b69dcf0f5f6"
 dependencies = [
  "snarkvm-circuit-account",
  "snarkvm-circuit-network",
@@ -1746,7 +1645,7 @@ dependencies = [
 [[package]]
 name = "snarkvm-circuit-types"
 version = "0.7.5"
-source = "git+https://github.com/liusen-adalab/snarkVM.git?branch=sen-testnet3#759edcca7331ceb0385664a158381b5d6bdbce1c"
+source = "git+https://github.com/liusen-adalab/snarkVM.git?branch=sen-testnet3#406ea42715cb1d922822ef428df97b69dcf0f5f6"
 dependencies = [
  "snarkvm-circuit-environment",
  "snarkvm-circuit-types-address",
@@ -1761,7 +1660,7 @@ dependencies = [
 [[package]]
 name = "snarkvm-circuit-types-address"
 version = "0.7.5"
-source = "git+https://github.com/liusen-adalab/snarkVM.git?branch=sen-testnet3#759edcca7331ceb0385664a158381b5d6bdbce1c"
+source = "git+https://github.com/liusen-adalab/snarkVM.git?branch=sen-testnet3#406ea42715cb1d922822ef428df97b69dcf0f5f6"
 dependencies = [
  "snarkvm-circuit-environment",
  "snarkvm-circuit-types-boolean",
@@ -1774,7 +1673,7 @@ dependencies = [
 [[package]]
 name = "snarkvm-circuit-types-boolean"
 version = "0.7.5"
-source = "git+https://github.com/liusen-adalab/snarkVM.git?branch=sen-testnet3#759edcca7331ceb0385664a158381b5d6bdbce1c"
+source = "git+https://github.com/liusen-adalab/snarkVM.git?branch=sen-testnet3#406ea42715cb1d922822ef428df97b69dcf0f5f6"
 dependencies = [
  "snarkvm-circuit-environment",
  "snarkvm-console-types-boolean",
@@ -1783,7 +1682,7 @@ dependencies = [
 [[package]]
 name = "snarkvm-circuit-types-field"
 version = "0.7.5"
-source = "git+https://github.com/liusen-adalab/snarkVM.git?branch=sen-testnet3#759edcca7331ceb0385664a158381b5d6bdbce1c"
+source = "git+https://github.com/liusen-adalab/snarkVM.git?branch=sen-testnet3#406ea42715cb1d922822ef428df97b69dcf0f5f6"
 dependencies = [
  "snarkvm-circuit-environment",
  "snarkvm-circuit-types-boolean",
@@ -1793,7 +1692,7 @@ dependencies = [
 [[package]]
 name = "snarkvm-circuit-types-group"
 version = "0.7.5"
-source = "git+https://github.com/liusen-adalab/snarkVM.git?branch=sen-testnet3#759edcca7331ceb0385664a158381b5d6bdbce1c"
+source = "git+https://github.com/liusen-adalab/snarkVM.git?branch=sen-testnet3#406ea42715cb1d922822ef428df97b69dcf0f5f6"
 dependencies = [
  "snarkvm-circuit-environment",
  "snarkvm-circuit-types-boolean",
@@ -1806,7 +1705,7 @@ dependencies = [
 [[package]]
 name = "snarkvm-circuit-types-integers"
 version = "0.7.5"
-source = "git+https://github.com/liusen-adalab/snarkVM.git?branch=sen-testnet3#759edcca7331ceb0385664a158381b5d6bdbce1c"
+source = "git+https://github.com/liusen-adalab/snarkVM.git?branch=sen-testnet3#406ea42715cb1d922822ef428df97b69dcf0f5f6"
 dependencies = [
  "snarkvm-circuit-environment",
  "snarkvm-circuit-types-boolean",
@@ -1817,7 +1716,7 @@ dependencies = [
 [[package]]
 name = "snarkvm-circuit-types-scalar"
 version = "0.7.5"
-source = "git+https://github.com/liusen-adalab/snarkVM.git?branch=sen-testnet3#759edcca7331ceb0385664a158381b5d6bdbce1c"
+source = "git+https://github.com/liusen-adalab/snarkVM.git?branch=sen-testnet3#406ea42715cb1d922822ef428df97b69dcf0f5f6"
 dependencies = [
  "snarkvm-circuit-environment",
  "snarkvm-circuit-types-boolean",
@@ -1828,7 +1727,7 @@ dependencies = [
 [[package]]
 name = "snarkvm-circuit-types-string"
 version = "0.7.5"
-source = "git+https://github.com/liusen-adalab/snarkVM.git?branch=sen-testnet3#759edcca7331ceb0385664a158381b5d6bdbce1c"
+source = "git+https://github.com/liusen-adalab/snarkVM.git?branch=sen-testnet3#406ea42715cb1d922822ef428df97b69dcf0f5f6"
 dependencies = [
  "snarkvm-circuit-environment",
  "snarkvm-circuit-types-boolean",
@@ -1840,7 +1739,7 @@ dependencies = [
 [[package]]
 name = "snarkvm-compiler"
 version = "0.7.5"
-source = "git+https://github.com/liusen-adalab/snarkVM.git?branch=sen-testnet3#759edcca7331ceb0385664a158381b5d6bdbce1c"
+source = "git+https://github.com/liusen-adalab/snarkVM.git?branch=sen-testnet3#406ea42715cb1d922822ef428df97b69dcf0f5f6"
 dependencies = [
  "anyhow",
  "colored",
@@ -1861,7 +1760,7 @@ dependencies = [
 [[package]]
 name = "snarkvm-console"
 version = "0.7.5"
-source = "git+https://github.com/liusen-adalab/snarkVM.git?branch=sen-testnet3#759edcca7331ceb0385664a158381b5d6bdbce1c"
+source = "git+https://github.com/liusen-adalab/snarkVM.git?branch=sen-testnet3#406ea42715cb1d922822ef428df97b69dcf0f5f6"
 dependencies = [
  "snarkvm-console-account",
  "snarkvm-console-algorithms",
@@ -1875,7 +1774,7 @@ dependencies = [
 [[package]]
 name = "snarkvm-console-account"
 version = "0.7.5"
-source = "git+https://github.com/liusen-adalab/snarkVM.git?branch=sen-testnet3#759edcca7331ceb0385664a158381b5d6bdbce1c"
+source = "git+https://github.com/liusen-adalab/snarkVM.git?branch=sen-testnet3#406ea42715cb1d922822ef428df97b69dcf0f5f6"
 dependencies = [
  "base58",
  "snarkvm-console-network",
@@ -1885,7 +1784,7 @@ dependencies = [
 [[package]]
 name = "snarkvm-console-algorithms"
 version = "0.7.5"
-source = "git+https://github.com/liusen-adalab/snarkVM.git?branch=sen-testnet3#759edcca7331ceb0385664a158381b5d6bdbce1c"
+source = "git+https://github.com/liusen-adalab/snarkVM.git?branch=sen-testnet3#406ea42715cb1d922822ef428df97b69dcf0f5f6"
 dependencies = [
  "blake2s_simd",
  "smallvec",
@@ -1897,7 +1796,7 @@ dependencies = [
 [[package]]
 name = "snarkvm-console-collections"
 version = "0.7.5"
-source = "git+https://github.com/liusen-adalab/snarkVM.git?branch=sen-testnet3#759edcca7331ceb0385664a158381b5d6bdbce1c"
+source = "git+https://github.com/liusen-adalab/snarkVM.git?branch=sen-testnet3#406ea42715cb1d922822ef428df97b69dcf0f5f6"
 dependencies = [
  "aleo-std",
  "rayon",
@@ -1908,7 +1807,7 @@ dependencies = [
 [[package]]
 name = "snarkvm-console-network"
 version = "0.7.5"
-source = "git+https://github.com/liusen-adalab/snarkVM.git?branch=sen-testnet3#759edcca7331ceb0385664a158381b5d6bdbce1c"
+source = "git+https://github.com/liusen-adalab/snarkVM.git?branch=sen-testnet3#406ea42715cb1d922822ef428df97b69dcf0f5f6"
 dependencies = [
  "anyhow",
  "itertools",
@@ -1926,7 +1825,7 @@ dependencies = [
 [[package]]
 name = "snarkvm-console-network-environment"
 version = "0.7.5"
-source = "git+https://github.com/liusen-adalab/snarkVM.git?branch=sen-testnet3#759edcca7331ceb0385664a158381b5d6bdbce1c"
+source = "git+https://github.com/liusen-adalab/snarkVM.git?branch=sen-testnet3#406ea42715cb1d922822ef428df97b69dcf0f5f6"
 dependencies = [
  "anyhow",
  "bech32",
@@ -1944,7 +1843,7 @@ dependencies = [
 [[package]]
 name = "snarkvm-console-program"
 version = "0.7.5"
-source = "git+https://github.com/liusen-adalab/snarkVM.git?branch=sen-testnet3#759edcca7331ceb0385664a158381b5d6bdbce1c"
+source = "git+https://github.com/liusen-adalab/snarkVM.git?branch=sen-testnet3#406ea42715cb1d922822ef428df97b69dcf0f5f6"
 dependencies = [
  "enum_index",
  "enum_index_derive",
@@ -1960,7 +1859,7 @@ dependencies = [
 [[package]]
 name = "snarkvm-console-transition"
 version = "0.7.5"
-source = "git+https://github.com/liusen-adalab/snarkVM.git?branch=sen-testnet3#759edcca7331ceb0385664a158381b5d6bdbce1c"
+source = "git+https://github.com/liusen-adalab/snarkVM.git?branch=sen-testnet3#406ea42715cb1d922822ef428df97b69dcf0f5f6"
 dependencies = [
  "snarkvm-console-account",
  "snarkvm-console-network",
@@ -1970,7 +1869,7 @@ dependencies = [
 [[package]]
 name = "snarkvm-console-types"
 version = "0.7.5"
-source = "git+https://github.com/liusen-adalab/snarkVM.git?branch=sen-testnet3#759edcca7331ceb0385664a158381b5d6bdbce1c"
+source = "git+https://github.com/liusen-adalab/snarkVM.git?branch=sen-testnet3#406ea42715cb1d922822ef428df97b69dcf0f5f6"
 dependencies = [
  "snarkvm-console-network-environment",
  "snarkvm-console-types-address",
@@ -1985,7 +1884,7 @@ dependencies = [
 [[package]]
 name = "snarkvm-console-types-address"
 version = "0.7.5"
-source = "git+https://github.com/liusen-adalab/snarkVM.git?branch=sen-testnet3#759edcca7331ceb0385664a158381b5d6bdbce1c"
+source = "git+https://github.com/liusen-adalab/snarkVM.git?branch=sen-testnet3#406ea42715cb1d922822ef428df97b69dcf0f5f6"
 dependencies = [
  "snarkvm-console-network-environment",
  "snarkvm-console-types-boolean",
@@ -1996,7 +1895,7 @@ dependencies = [
 [[package]]
 name = "snarkvm-console-types-boolean"
 version = "0.7.5"
-source = "git+https://github.com/liusen-adalab/snarkVM.git?branch=sen-testnet3#759edcca7331ceb0385664a158381b5d6bdbce1c"
+source = "git+https://github.com/liusen-adalab/snarkVM.git?branch=sen-testnet3#406ea42715cb1d922822ef428df97b69dcf0f5f6"
 dependencies = [
  "snarkvm-console-network-environment",
 ]
@@ -2004,7 +1903,7 @@ dependencies = [
 [[package]]
 name = "snarkvm-console-types-field"
 version = "0.7.5"
-source = "git+https://github.com/liusen-adalab/snarkVM.git?branch=sen-testnet3#759edcca7331ceb0385664a158381b5d6bdbce1c"
+source = "git+https://github.com/liusen-adalab/snarkVM.git?branch=sen-testnet3#406ea42715cb1d922822ef428df97b69dcf0f5f6"
 dependencies = [
  "snarkvm-console-network-environment",
  "snarkvm-console-types-boolean",
@@ -2013,7 +1912,7 @@ dependencies = [
 [[package]]
 name = "snarkvm-console-types-group"
 version = "0.7.5"
-source = "git+https://github.com/liusen-adalab/snarkVM.git?branch=sen-testnet3#759edcca7331ceb0385664a158381b5d6bdbce1c"
+source = "git+https://github.com/liusen-adalab/snarkVM.git?branch=sen-testnet3#406ea42715cb1d922822ef428df97b69dcf0f5f6"
 dependencies = [
  "snarkvm-console-network-environment",
  "snarkvm-console-types-boolean",
@@ -2024,7 +1923,7 @@ dependencies = [
 [[package]]
 name = "snarkvm-console-types-integers"
 version = "0.7.5"
-source = "git+https://github.com/liusen-adalab/snarkVM.git?branch=sen-testnet3#759edcca7331ceb0385664a158381b5d6bdbce1c"
+source = "git+https://github.com/liusen-adalab/snarkVM.git?branch=sen-testnet3#406ea42715cb1d922822ef428df97b69dcf0f5f6"
 dependencies = [
  "snarkvm-console-network-environment",
  "snarkvm-console-types-boolean",
@@ -2034,7 +1933,7 @@ dependencies = [
 [[package]]
 name = "snarkvm-console-types-scalar"
 version = "0.7.5"
-source = "git+https://github.com/liusen-adalab/snarkVM.git?branch=sen-testnet3#759edcca7331ceb0385664a158381b5d6bdbce1c"
+source = "git+https://github.com/liusen-adalab/snarkVM.git?branch=sen-testnet3#406ea42715cb1d922822ef428df97b69dcf0f5f6"
 dependencies = [
  "snarkvm-console-network-environment",
  "snarkvm-console-types-boolean",
@@ -2044,7 +1943,7 @@ dependencies = [
 [[package]]
 name = "snarkvm-console-types-string"
 version = "0.7.5"
-source = "git+https://github.com/liusen-adalab/snarkVM.git?branch=sen-testnet3#759edcca7331ceb0385664a158381b5d6bdbce1c"
+source = "git+https://github.com/liusen-adalab/snarkVM.git?branch=sen-testnet3#406ea42715cb1d922822ef428df97b69dcf0f5f6"
 dependencies = [
  "snarkvm-console-network-environment",
  "snarkvm-console-types-boolean",
@@ -2055,7 +1954,7 @@ dependencies = [
 [[package]]
 name = "snarkvm-curves"
 version = "0.7.5"
-source = "git+https://github.com/liusen-adalab/snarkVM.git?branch=sen-testnet3#759edcca7331ceb0385664a158381b5d6bdbce1c"
+source = "git+https://github.com/liusen-adalab/snarkVM.git?branch=sen-testnet3#406ea42715cb1d922822ef428df97b69dcf0f5f6"
 dependencies = [
  "derivative",
  "rand",
@@ -2069,7 +1968,7 @@ dependencies = [
 [[package]]
 name = "snarkvm-dpc"
 version = "0.7.5"
-source = "git+https://github.com/liusen-adalab/snarkVM.git?branch=sen-testnet3#759edcca7331ceb0385664a158381b5d6bdbce1c"
+source = "git+https://github.com/liusen-adalab/snarkVM.git?branch=sen-testnet3#406ea42715cb1d922822ef428df97b69dcf0f5f6"
 dependencies = [
  "anyhow",
  "base58",
@@ -2098,7 +1997,7 @@ dependencies = [
 [[package]]
 name = "snarkvm-fields"
 version = "0.7.5"
-source = "git+https://github.com/liusen-adalab/snarkVM.git?branch=sen-testnet3#759edcca7331ceb0385664a158381b5d6bdbce1c"
+source = "git+https://github.com/liusen-adalab/snarkVM.git?branch=sen-testnet3#406ea42715cb1d922822ef428df97b69dcf0f5f6"
 dependencies = [
  "anyhow",
  "derivative",
@@ -2113,7 +2012,7 @@ dependencies = [
 [[package]]
 name = "snarkvm-gadgets"
 version = "0.7.5"
-source = "git+https://github.com/liusen-adalab/snarkVM.git?branch=sen-testnet3#759edcca7331ceb0385664a158381b5d6bdbce1c"
+source = "git+https://github.com/liusen-adalab/snarkVM.git?branch=sen-testnet3#406ea42715cb1d922822ef428df97b69dcf0f5f6"
 dependencies = [
  "anyhow",
  "derivative",
@@ -2130,7 +2029,7 @@ dependencies = [
 [[package]]
 name = "snarkvm-parameters"
 version = "0.7.5"
-source = "git+https://github.com/liusen-adalab/snarkVM.git?branch=sen-testnet3#759edcca7331ceb0385664a158381b5d6bdbce1c"
+source = "git+https://github.com/liusen-adalab/snarkVM.git?branch=sen-testnet3#406ea42715cb1d922822ef428df97b69dcf0f5f6"
 dependencies = [
  "aleo-std",
  "anyhow",
@@ -2152,7 +2051,7 @@ dependencies = [
 [[package]]
 name = "snarkvm-r1cs"
 version = "0.7.5"
-source = "git+https://github.com/liusen-adalab/snarkVM.git?branch=sen-testnet3#759edcca7331ceb0385664a158381b5d6bdbce1c"
+source = "git+https://github.com/liusen-adalab/snarkVM.git?branch=sen-testnet3#406ea42715cb1d922822ef428df97b69dcf0f5f6"
 dependencies = [
  "anyhow",
  "cfg-if",
@@ -2168,7 +2067,7 @@ dependencies = [
 [[package]]
 name = "snarkvm-utilities"
 version = "0.7.5"
-source = "git+https://github.com/liusen-adalab/snarkVM.git?branch=sen-testnet3#759edcca7331ceb0385664a158381b5d6bdbce1c"
+source = "git+https://github.com/liusen-adalab/snarkVM.git?branch=sen-testnet3#406ea42715cb1d922822ef428df97b69dcf0f5f6"
 dependencies = [
  "aleo-std",
  "anyhow",
@@ -2186,7 +2085,7 @@ dependencies = [
 [[package]]
 name = "snarkvm-utilities-derives"
 version = "0.7.5"
-source = "git+https://github.com/liusen-adalab/snarkVM.git?branch=sen-testnet3#759edcca7331ceb0385664a158381b5d6bdbce1c"
+source = "git+https://github.com/liusen-adalab/snarkVM.git?branch=sen-testnet3#406ea42715cb1d922822ef428df97b69dcf0f5f6"
 dependencies = [
  "proc-macro-crate",
  "proc-macro-error",
@@ -2257,15 +2156,6 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "a393066ed9010ebaed60b9eafa373d4b1baac186dd7e008555b0f702b51945b6"
 dependencies = [
  "unicode-xid 0.0.4",
-]
-
-[[package]]
-name = "temp-env"
-version = "0.2.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "45107136c2ddf8c4b87453c02294fd0adf41751796e81e8ba3f7fd951977ab57"
-dependencies = [
- "once_cell",
 ]
 
 [[package]]
